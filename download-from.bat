@@ -7,10 +7,11 @@
 : return:=package_path
 
 SetLocal ENABLEDELAYEDEXPANSION
+Set curl_download_vbs=Cscript "%~dp0curl-download.vbs" //B /Url:
 PushD "%~f1" > Nul && (
     Echo %~2| FindStr /I /R "^http:// ^https://" > Nul && (
         If Not "%~3"=="" (
-            Cscript curl-download.vbs //B /Url:"%~2" /Output:"%~nx3"
+            %curl_download_vbs%"%~2" /Output:"%~nx3"
             Call :ReturnLocalPath "%~nx3"
             GoTo End
         ) Else (
@@ -21,7 +22,7 @@ PushD "%~f1" > Nul && (
                 Set output_name=/output:"%%~nxF"
                 Set output_name=!output_name:%%20=_!
             )
-            Cscript curl-download.vbs //B /Url:"%~2" !output_name!
+            %curl_download_vbs%"%~2" !output_name!
             If DEFINED output_name (
                 Call :ReturnLocalPath !output_name:/output:=!
                 GoTo End
