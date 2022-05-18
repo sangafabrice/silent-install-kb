@@ -1,2 +1,3 @@
-jq.bat
 profile.init.bat
+auto-complete/*
+!auto-complete/.gitkeep
