@@ -1,4 +1,4 @@
-## **Update Hugo, GitHub CLI, Jq, Yq, Pup, XMLstarlet, Wmi Explorer, Rufus and Youtube-Dl with Windows Shell**
+## **Update Google Chrome, Avast Secure, Hugo, GitHub CLI, Jq, Yq, Pup, XMLstarlet, Wmi Explorer, Rufus and Youtube-Dl with Windows Shell**
 ---
 ##### Author: Fabrice Sanga
 <br/>
@@ -21,5 +21,7 @@ Update-Pup [CopyToDirectory]
 Update-WmiExplorer [CopyToDirectory]
 Update-Rufus [CopyToDirectory]
 Update-XML [CopyToDirectory]
+Update-AvastSecure [CopyToDirectory]
+Update-GoogleChrome [CopyToDirectory]
 CopyToDirectory     The directory where to backup the installer
 ```

@@ -1,0 +1,1 @@
+../../silent-install-kb/profile.init.bat

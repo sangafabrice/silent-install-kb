@@ -1,1 +1,1 @@
-@Call "%~dp0assets\update-console-app.bat" pup.exe "%~f1" pup.exe
+@Call "%~dp0assets\main.bat" pup.exe "%~f1" pup.exe

@@ -1,0 +1,1 @@
+@Call "%~dp0assets\main.bat" profile:\avastbrowser.exe "%~f1" chromium: "* -gui" non_cli Omaha

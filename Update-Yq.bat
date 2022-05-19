@@ -1,1 +1,1 @@
-@Call "%~dp0assets\update-console-app.bat" shimmed\yq.exe "%~f1" "" "--version 4"
+@Call "%~dp0assets\main.bat" shimmed\yq.exe "%~f1" "" "--version 4"

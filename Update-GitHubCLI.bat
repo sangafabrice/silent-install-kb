@@ -1,1 +1,1 @@
-@Call "%~dp0assets\update-console-app.bat" shimmed\gh.exe "%~f1" gh.exe "version 3"
+@Call "%~dp0assets\main.bat" shimmed\gh.exe "%~f1" gh.exe "version 3"

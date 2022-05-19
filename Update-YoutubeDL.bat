@@ -1,1 +1,1 @@
-@Call "%~dp0assets\update-console-app.bat" youtube-dl.exe "%~f1"
+@Call "%~dp0assets\main.bat" youtube-dl.exe "%~f1"
