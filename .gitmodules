@@ -1,0 +1,4 @@
+[submodule "dl-info"]
+	path = dl-info
+	url = https://github.com/sangafabrice/download-info.git
+	branch = batch

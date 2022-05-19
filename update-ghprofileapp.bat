@@ -23,7 +23,7 @@ If Not "%~nx1"=="%~1" (
 Set compare=2
 Set version=
 Set link=
-Call ..\download-info\batch\GetFrom-Github.bat %~n1.ini version link > Nul
+Call dl-info\GetFrom-Github.bat %~n1.ini version link > Nul
 If EXIST "%app%" Call compare-version-cli.bat "%version%" "%shim%" --version compare
 set download_unzip_prefix=
 If Not ""=="%~3" set download_unzip_prefix=download-unzip-

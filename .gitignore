@@ -1,3 +1,4 @@
 profile.init.bat
 auto-complete/*
 !auto-complete/.gitkeep
+*.exe
