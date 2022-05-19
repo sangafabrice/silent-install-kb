@@ -1,4 +1,4 @@
-## **Update Hugo, Jq, Yq, Pup and Youtube-Dl with Windows Shell**
+## **Update Hugo, GitHub CLI, Jq, Yq, Pup and Youtube-Dl with Windows Shell**
 ---
 ##### Author: Fabrice Sanga
 <br/>
@@ -13,6 +13,7 @@ If %~1==autorun_parent Echo Path\To\Autorun\Profile\Folder
 The usage :
 ```batfile
 Update-Hugo [CopyToDirectory]
+Update-GitHubCLI [CopyToDirectory]
 Update-Jq [CopyToDirectory]
 Update-Yq [CopyToDirectory]
 Update-YoutubeDl [CopyToDirectory]
