@@ -1,0 +1,1 @@
+@Call "%~dp0update-ghprofileapp.bat" shimmed\hugo.exe "%~f1" hugo.exe "version _q_2 delims=- _q_"
