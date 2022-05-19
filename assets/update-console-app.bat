@@ -6,6 +6,7 @@
 : 3=:local_dl_name
 : 4=:shim_command_for_version
 : 5=:non_cli_flag
+: 6=:app_host
 
 PushD "%~dp0"
 Call set-system-autorun.bat > Nul
@@ -20,10 +21,12 @@ If Not "%~nx1"=="%~1" (
     Set set_shim_bat=set-cli-version-shim.bat
     If Not ""=="%~5" set set_shim_bat=set-version-shim.bat
 )
+Set app_host=Github
+If Not ""=="%~6" Set app_host=%~6
 Set compare=2
 Set version=
 Set link=
-Call dl-info\GetFrom-Github.bat ini\%~n1.ini version link > Nul
+Call dl-info\GetFrom-%app_host%.bat ini\%~n1.ini version link > Nul
 If EXIST "%app%" Call compare-version-cli.bat "%version%" "%shim%" --version compare
 set download_unzip_prefix=
 If Not ""=="%~3" set download_unzip_prefix=download-unzip-

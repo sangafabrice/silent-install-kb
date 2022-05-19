@@ -1,6 +1,6 @@
 @Echo OFF
 PushD "%~dp0"
-Call assets\update-ghprofileapp.bat shimmed\rufus.exe "%~f1" "" 1-2 non_cli
+Call assets\update-console-app.bat shimmed\rufus.exe "%~f1" "" 1-2 non_cli
 Call :write-to-profile "%PROFILE_DRIVE_PATH%\rufus.bat" rufus.shim.txt
 PopD
 GoTo :EOF

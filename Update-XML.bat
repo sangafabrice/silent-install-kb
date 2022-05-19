@@ -1,0 +1,1 @@
+@Call "%~dp0assets\update-console-app.bat" shimmed\xml.exe "%~f1" xml.exe "--version *" "" Sourceforge
