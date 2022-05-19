@@ -1,1 +1,1 @@
-@Call "%~dp0update-ghprofileapp.bat" jq.exe "%~f1"
+@Call "%~dp0assets\update-ghprofileapp.bat" jq.exe "%~f1"

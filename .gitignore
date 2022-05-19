@@ -1,4 +1,3 @@
-profile.init.bat
-auto-complete/*
-!auto-complete/.gitkeep
+assets/auto-complete/*
+!**/.gitkeep
 *.exe

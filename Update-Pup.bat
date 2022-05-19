@@ -1,1 +1,1 @@
-@Call "%~dp0update-ghprofileapp.bat" pup.exe "%~f1" pup.exe
+@Call "%~dp0assets\update-ghprofileapp.bat" pup.exe "%~f1" pup.exe

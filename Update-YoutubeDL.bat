@@ -1,1 +1,1 @@
-@Call "%~dp0update-ghprofileapp.bat" youtube-dl.exe "%~f1"
+@Call "%~dp0assets\update-ghprofileapp.bat" youtube-dl.exe "%~f1"
