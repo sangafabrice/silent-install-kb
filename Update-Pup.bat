@@ -1,0 +1,1 @@
+@Call "%~dp0update-ghprofileapp.bat" pup.exe "%~f1" pup.exe

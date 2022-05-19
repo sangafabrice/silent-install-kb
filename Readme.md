@@ -1,4 +1,4 @@
-## **Update Jq and Youtube-Dl with Windows Shell**
+## **Update Jq, Pup and Youtube-Dl with Windows Shell**
 ---
 ##### Author: Fabrice Sanga
 <br/>
@@ -14,5 +14,6 @@ The usage :
 ```batfile
 Update-Jq [CopyToDirectory]
 Update-YoutubeDl [CopyToDirectory]
+Update-Pup [CopyToDirectory]
 CopyToDirectory     The directory where to backup the installer
 ```
