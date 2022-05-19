@@ -1,4 +1,4 @@
-## **Update Hugo, GitHub CLI, Jq, Yq, Pup, Wmi Explorer and Youtube-Dl with Windows Shell**
+## **Update Hugo, GitHub CLI, Jq, Yq, Pup, Wmi Explorer, Rufus and Youtube-Dl with Windows Shell**
 ---
 ##### Author: Fabrice Sanga
 <br/>
@@ -19,5 +19,6 @@ Update-Yq [CopyToDirectory]
 Update-YoutubeDl [CopyToDirectory]
 Update-Pup [CopyToDirectory]
 Update-WmiExplorer [CopyToDirectory]
+Update-Rufus [CopyToDirectory]
 CopyToDirectory     The directory where to backup the installer
 ```
