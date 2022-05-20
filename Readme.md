@@ -1,4 +1,4 @@
-## **Update Google Chrome, Avast Secure, 7zip, Hugo, GitHub CLI, Jq, Yq, Pup, XMLstarlet, Wmi Explorer, Rufus and Youtube-Dl with Windows Shell**
+## **Update Google Chrome, Avast Secure, Chocolatey, 7zip, Hugo, GitHub CLI, Jq, Yq, Pup, XMLstarlet, Wmi Explorer, Rufus and Youtube-Dl with Windows Shell**
 ---
 ##### Author: Fabrice Sanga
 <br/>
@@ -12,17 +12,8 @@ If %~1==autorun_parent Echo Path\To\Autorun\Profile\Folder
 
 The usage :
 ```batfile
-Update-Hugo [CopyToDirectory]
-Update-GitHubCLI [CopyToDirectory]
-Update-Jq [CopyToDirectory]
-Update-Yq [CopyToDirectory]
-Update-YoutubeDl [CopyToDirectory]
-Update-Pup [CopyToDirectory]
-Update-WmiExplorer [CopyToDirectory]
-Update-Rufus [CopyToDirectory]
-Update-XML [CopyToDirectory]
-Update-7zip [CopyToDirectory]
-Update-AvastSecure [CopyToDirectory]
-Update-GoogleChrome [CopyToDirectory]
+Update-App [CopyToDirectory]
 CopyToDirectory     The directory where to backup the installer
+App                 GoogleChrome, AvastSecure, Chocolatey, 7zip, Hugo, GitHubCLI,
+                    Jq, Yq, Pup, XML, WmiExplorer, Rufus or YoutubeDL
 ```

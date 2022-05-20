@@ -1,0 +1,1 @@
+@Call "%~dp0assets\main-choco.bat" "%~f1"
