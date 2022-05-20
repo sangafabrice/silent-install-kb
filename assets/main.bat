@@ -26,7 +26,8 @@ If Not "%~nx1"=="%~1" (
     Set shim_command=%~4
     Set shim_command=!shim_command:_q_="!
     Set set_shim_bat=set-cli-version-shim.bat
-    If Not ""=="%~5" set set_shim_bat=set-version-shim.bat
+    If "non_cli"=="%~5" set set_shim_bat=set-version-shim.bat
+    If "non_cli_reg"=="%~5" set set_shim_bat=set-reg-version-shim.bat
 )
 Set app_host=Github
 If Not ""=="%~6" Set app_host=%~6
@@ -37,6 +38,7 @@ Call dl-info\GetFrom-%app_host%.bat ini\%~n1.ini version link > Nul
 If EXIST "%app%" Call compare-version-cli.bat "%version%" "%shim%" --version compare
 For /F "Tokens=1 Delims=\" %%T In ("%~3") Do (
     If /I "Chromium:" EQU "%%~T" GoTo InstallChromium
+    If /I "Nsis:" EQU "%%~T" GoTo InstallNsis
 )
 :InstallConsole
 Set download_unzip_prefix=
@@ -44,13 +46,17 @@ If Not ""=="%~nx3" Set download_unzip_prefix=download-unzip-
 Call %download_unzip_prefix%install-console-setup.bat "%version%" "%link%" "%app%" %~nx3 "%compare%" "%~f2" > Nul
 If EXIST "%app%" If DEFINED shim_command Call %set_shim_bat% "%%%%%%%%~dp0%~1" %shim_command% > "%shim%"
 GoTo EndShimming
+:InstallNsis
+If "%compare%"=="2" Call install-nsis-setup.bat "%version%" "%link%" "%program_data%" "%~f2" > Nul
+GoTo EndInstall
 :InstallChromium
 If "%compare%"=="2" (
     TaskKill /IM %~nx1 /F > Nul 2>&1
     Call download-install-chromium-setup.bat "%version%" "%link%" "%shim%" "%app%" "%~f2" > Nul
 )
+GoTo EndInstall
+:EndInstall
 If EXIST "%app%" If DEFINED shim_command Call %set_shim_bat% "%app%" %shim_command% > "%shim%"
-GoTo EndShimming
 :EndShimming
 If EXIST "%app%" Call "%shim%" --version > auto-complete\%~n1
 EndLocal
