@@ -3,14 +3,13 @@
 :Main
 : 1=:version
 : 2=:link
-: 3=:shim_path
-: 4=:program_data_exe
-: [5=:save_copy_to]
+: 3=:program_data_exe
+: [4=:save_copy_to]
 
 PushD "%~dp0"
 SetLocal ENABLEDELAYEDEXPANSION
 Set [version]=%~1
-Set [version_exe]=%~f5\%~1.exe
+Set [version_exe]=%~f4\%~1.exe
 Set [link]=%~2
 For /F "Tokens=2 Delims=[]" %%P In ('^
     Dir /AL 7z.exe ^|^
@@ -18,17 +17,14 @@ For /F "Tokens=2 Delims=[]" %%P In ('^
 ') Do If Not EXIST "%%~fP" GoTo EndToLocal
 Call copy-local-link.bat [version_exe] [link] [version] || GoTo EndToLocal
 For /F "Tokens=*" %%P In ('Call download-from.bat . "%[link]%"') Do (
-    Set [unzippath]=%~dp0%%~nP
-    Cscript 7z-extract.vbs //B /Output:"![unzippath]!" /Archive:"%%~fP"
-    7z x -aoa -o"![unzippath]!" "%%~fP"
-    For /F "Tokens=1 Delims= " %%F In ('Dir /B "![unzippath]!\*.7z" 2^> Nul') Do (
-        7z x -aoa -o"![unzippath]!" "![unzippath]!\%%~nxF"
-        Del /F /Q "![unzippath]!\%%~nxF" > Nul
+    7z x -aoa -o"%%~dpnP" "%%~fP"
+    For /F "Tokens=*" %%X In ('Dir /S /B "%%~dpnP\%~nx3"') Do (
+        Echo D|^
+XCopy "%%~dpX" "%~dp3" /E /Y /Q > Nul
     )
-    Call install-chromium-setup.bat "![unzippath]!" "%~f3" "%~f4"
-    If Not "%~f5"=="" Call save-package.bat "%[version_exe]%" "%%~fP"
+    If Not "%~f4"=="" Call save-package.bat "%[version_exe]%" "%%~fP"
+    Call :RemoveUnzipped "%%~dpnP"
     Call :DeletePackage "%%~fP"
-    Call :RemoveUnzipped "![unzippath]!"
 )
 Set [version]
 Set [link]

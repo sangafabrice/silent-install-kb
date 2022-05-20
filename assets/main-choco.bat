@@ -1,12 +1,7 @@
 @Echo OFF
 
 :Main
-: 1=:app_executable_relative_path_from_profile
-: 2=:save_copy_to
-: 3=:local_dl_name
-: 4=:shim_command_for_version
-: 5=:non_cli_flag
-: 6=:app_host
+: 1=:save_copy_to
 
 PushD "%~dp0"
 Call set-system-autorun.bat > Nul
