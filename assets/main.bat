@@ -7,6 +7,7 @@
 : 4=:shim_command_for_version
 : 5=:non_cli_flag
 : 6=:app_host
+: 7=:shortcut_name
 
 PushD "%~dp0"
 Call set-system-autorun.bat > Nul
@@ -58,6 +59,12 @@ GoTo EndInstall
 :EndInstall
 If EXIST "%app%" If DEFINED shim_command Call %set_shim_bat% "%app%" %shim_command% > "%shim%"
 :EndShimming
-If EXIST "%app%" Call "%shim%" --version > auto-complete\%~n1
+If EXIST "%app%" (
+    Call "%shim%" --version > auto-complete\%~n1
+    If Not ""=="%~7" (
+        Cscript //B set-shortcut.vbs /Target:"%app%"^
+        /Shortcut:"%ALLUSERSPROFILE%\Microsoft\Windows\Start Menu\Programs\%~7.lnk"
+    )
+)
 EndLocal
 PopD

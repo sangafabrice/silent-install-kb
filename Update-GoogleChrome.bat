@@ -1,1 +1,1 @@
-@Call "%~dp0assets\main.bat" profile:\chrome.exe "%~f1" chromium: "* -gui" non_cli Omaha
+@Call "%~dp0assets\main.bat" profile:\chrome.exe "%~f1" chromium: "* -gui" non_cli Omaha "Google Chrome"
