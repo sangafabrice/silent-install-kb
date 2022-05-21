@@ -1,0 +1,1 @@
+@Call "%~dp0assets\main.bat" profile:\node.exe "%~f1" "msi:\INSTALLDIR=program_data ADDLOCAL=NodeEtwSupport,DocumentationShortcuts,npm,NodeRuntime" 1-3 non_cli Link

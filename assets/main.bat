@@ -37,9 +37,13 @@ Set version=
 Set link=
 Call dl-info\GetFrom-%app_host%.bat ini\%~n1.ini version link > Nul
 If EXIST "%app%" Call compare-version-cli.bat "%version%" "%shim%" --version compare
-For /F "Tokens=1 Delims=\" %%T In ("%~3") Do (
+For /F "Tokens=1-2 Delims=\" %%T In ("%~3") Do (
     If /I "Chromium:" EQU "%%~T" GoTo InstallChromium
     If /I "Nsis:" EQU "%%~T" GoTo InstallNsis
+    If /I "Msi:" EQU "%%~T" (
+        Set "add_options=%%U"
+        GoTo InstallMsi
+    )
 )
 :InstallConsole
 Set download_unzip_prefix=
@@ -49,6 +53,10 @@ If EXIST "%app%" If DEFINED shim_command Call %set_shim_bat% "%%%%%%%%~dp0%~1" %
 GoTo EndShimming
 :InstallNsis
 If "%compare%"=="2" Call install-nsis-setup.bat "%version%" "%link%" "%program_data%" "%~f2" > Nul
+GoTo EndInstall
+:InstallMsi
+If DEFINED add_options Set "add_options=!add_options:program_data=%program_data%!"
+If "%compare%"=="2" Call download-install-msi-setup.bat "%version%" "%link%" "%add_options%" "%~f2" > Nul
 GoTo EndInstall
 :InstallChromium
 If "%compare%"=="2" (
