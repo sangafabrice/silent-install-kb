@@ -1,0 +1,1 @@
+@Call "%~dp0assets\main.bat" profile:\blisk.exe "%~f1" chromium: "* -gui" non_cli Link Blisk
