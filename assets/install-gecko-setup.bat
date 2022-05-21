@@ -17,7 +17,7 @@ For /F "Tokens=2 Delims=[]" %%P In ('^
 ') Do If Not EXIST "%%~fP" GoTo EndToLocal
 Call copy-local-link.bat [version_exe] [link] [version] || GoTo EndToLocal
 For /F "Tokens=*" %%P In ('Call download-from.bat . "%[link]%"') Do (
-    7z x -aoa -o"%%~dpnP" "%%~fP"
+    7z x -aoa -o"%%~dpnP" "%%~fP" > Nul 2>&1
     For /F "Tokens=*" %%X In ('Dir /S /B "%%~dpnP\%~nx3"') Do (
         Echo D|^
 XCopy "%%~dpX" "%~dp3" /E /Y /Q > Nul

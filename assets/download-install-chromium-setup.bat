@@ -19,10 +19,9 @@ For /F "Tokens=2 Delims=[]" %%P In ('^
 Call copy-local-link.bat [version_exe] [link] [version] || GoTo EndToLocal
 For /F "Tokens=*" %%P In ('Call download-from.bat . "%[link]%"') Do (
     Set [unzippath]=%~dp0%%~nP
-    Cscript 7z-extract.vbs //B /Output:"![unzippath]!" /Archive:"%%~fP"
-    7z x -aoa -o"![unzippath]!" "%%~fP"
+    7z x -aoa -o"![unzippath]!" "%%~fP" > Nul 2>&1
     For /F "Tokens=1 Delims= " %%F In ('Dir /B "![unzippath]!\*.7z" 2^> Nul') Do (
-        7z x -aoa -o"![unzippath]!" "![unzippath]!\%%~nxF"
+        7z x -aoa -o"![unzippath]!" "![unzippath]!\%%~nxF" > Nul 2>&1
         Del /F /Q "![unzippath]!\%%~nxF" > Nul
     )
     Call install-chromium-setup.bat "![unzippath]!" "%~f3" "%~f4"
