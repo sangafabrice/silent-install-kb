@@ -14,7 +14,7 @@ Set shim=%PROFILE_DRIVE_PATH%\chocolatey.bat
 Set compare=2
 Set version=
 Set link=
-Call dl-info\GetFrom-Chocolatey.bat version link > Nul
+Call dl-info\GetFrom-Link.bat Chocolatey version link > Nul
 If EXIST "%app%" Call compare-version-cli.bat "%version%" "%shim%" --version compare
 For /F "Tokens=2 Delims=[]" %%P In ('^
     Dir /AL 7z.exe ^|^
