@@ -8,6 +8,7 @@
 : 5=:non_cli_flag
 : 6=:app_host
 : 7=:shortcut_name
+: 8=:use_last_modified_flag
 
 PushD "%~dp0"
 Call set-system-autorun.bat > Nul
@@ -36,7 +37,9 @@ Set compare=2
 Set version=
 Set link=
 Call dl-info\GetFrom-%app_host%.bat ini\%~n1.ini version link > Nul
-If EXIST "%app%" Call compare-version-cli.bat "%version%" "%shim%" --version compare
+Set cmdline="%shim%" --version
+If Not ""=="%~8" Set cmdline="%ComSpec%" "/C Echo !%~8!"
+If EXIST "%app%" Call compare-version-cli.bat "%version%" %cmdline% compare
 For /F "Tokens=1-2 Delims=\" %%T In ("%~3") Do (
     If /I "Chromium:" EQU "%%~T" GoTo InstallChromium
     If /I "Nsis:" EQU "%%~T" GoTo InstallNsis
@@ -73,6 +76,8 @@ If EXIST "%app%" (
         Cscript //B set-shortcut.vbs /Target:"%app%"^
         /Shortcut:"%ALLUSERSPROFILE%\Microsoft\Windows\Start Menu\Programs\%~7.lnk"
     )
+    If Not ""=="%~8" Echo Set %~8=%version%> "%PROFILE_DRIVE_PATH%\mod_%~n1.bat"
 )
 EndLocal
+If Not ""=="%~8" Call "%PROFILE_DRIVE_PATH%\mod_%~n1.bat" > Nul 2>&1
 PopD
