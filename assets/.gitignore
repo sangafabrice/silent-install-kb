@@ -1,1 +1,7 @@
+# Ignore executable files:
+# Especially:
+# 7z.exe
+# jq.exe
+# pup.exe
+# xml.exe [xmlstarlet console app]
 *.exe
