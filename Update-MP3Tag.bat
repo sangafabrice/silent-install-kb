@@ -1,0 +1,1 @@
+@Call "%~dp0assets\main.bat" profile:\mp3tag.exe "%~f1" Nsis: "1-2 -gui" non_cli Link "" MP3TAG_DOWNLOAD_ETAG
