@@ -1,0 +1,1 @@
+@Call "%~dp0assets\main.bat" profile:\ruby.exe "%~f1" Inno: "CU Ruby" non_cli_reg
