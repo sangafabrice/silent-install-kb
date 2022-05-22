@@ -48,6 +48,10 @@ For /F "Tokens=1-2 Delims=\" %%T In ("%~3") Do (
         Set "add_options=%%U"
         GoTo InstallMsi
     )
+    If /I "Portable:" EQU "%%~T" (
+        Set "dl_ext=%%U"
+        GoTo InstallPortable
+    )
 )
 :InstallConsole
 Set download_unzip_prefix=
@@ -69,6 +73,12 @@ GoTo EndInstall
 If "%compare%"=="2" (
     TaskKill /IM %~nx1 /F > Nul 2>&1
     Call download-install-chromium-setup.bat "%version%" "%link%" "%shim%" "%app%" "%~f2" > Nul
+)
+GoTo EndInstall
+:InstallPortable
+If "%compare%"=="2" (
+    TaskKill /IM %~nx1 /F > Nul 2>&1
+    Call download-unzip-portable-setup.bat "%version%.%dl_ext%" "%link%" "%program_data%" "%~f2" > Nul
 )
 GoTo EndInstall
 :EndInstall
