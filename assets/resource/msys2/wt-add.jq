@@ -1,0 +1,1 @@
+.profiles.list[.profiles.list as $plist | [$plist[] | .name] | indices("MSYS2") | if isempty(.[]) then ($plist | length) else .[] end] = $Json_txt

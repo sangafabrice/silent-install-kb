@@ -1,0 +1,1 @@
+@Call "%~dp0assets\main-msys2.bat" "%~f1"
