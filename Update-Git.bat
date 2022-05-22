@@ -1,0 +1,1 @@
+@Call "%~dp0assets\main-git.bat" "%~f1"
