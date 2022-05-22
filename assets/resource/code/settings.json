@@ -1,0 +1,35 @@
+{
+    "files.autoSave": "afterDelay",
+    "files.autoSaveDelay": 1000,
+    "codesnap.shutterAction": "copy",
+    "files.exclude": {
+        "**/desktop.ini": true
+    },
+    "workbench.colorTheme": "Default Dark+",
+	"workbench.iconTheme": "moxer-icons",
+    "workbench.editor.enablePreview": false,
+    "terminal.integrated.profiles.windows": {
+        "PowerShell": {
+            "source": "PowerShell",
+            "icon": "terminal-powershell"
+        },
+        "Command Prompt": {
+            "path": [
+                "${env:windir}\\Sysnative\\cmd.exe",
+                "${env:windir}\\System32\\cmd.exe"
+            ],
+            "args": [],
+            "icon": "terminal-cmd"
+        },
+        "Git Bash": {
+            "source": "Git Bash"
+        },
+        "PowerShell Core": {
+            "path": "",
+            "args": [],
+            "icon": "terminal-powershell",
+            "color": "terminal.ansiCyan"
+        }
+    },
+    "terminal.integrated.defaultProfile.windows": "PowerShell"
+}
