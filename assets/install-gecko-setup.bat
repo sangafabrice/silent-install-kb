@@ -36,6 +36,7 @@ GoTo :EOF
 :RemoveUnzipped
     RmDir /S /Q "%~f1" 2> Nul
     If EXIST "%~f1" GoTo RemoveUnzipped
+    GoTo :EOF
 
 :DeletePackage
     Del /F /Q "%~f1" > Nul 2>&1

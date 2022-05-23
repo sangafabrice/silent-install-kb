@@ -27,7 +27,7 @@ For /F "Tokens=*" %%P In ('Call download-from.bat . "%[link]%"') Do (
     Call install-chromium-setup.bat "![unzippath]!" "%~f3" "%~f4"
     If Not "%~f5"=="" Call save-package.bat "%[version_exe]%" "%%~fP"
     Call :DeletePackage "%%~fP"
-    Call :RemoveUnzipped "![unzippath]!"
+    If Not "![unzippath]!"=="" Call :RemoveUnzipped "![unzippath]!"
 )
 Set [version]
 Set [link]
@@ -39,6 +39,7 @@ GoTo :EOF
 :RemoveUnzipped
     RmDir /S /Q "%~f1" 2> Nul
     If EXIST "%~f1" GoTo RemoveUnzipped
+    GoTo :EOF
 
 :DeletePackage
     Del /F /Q "%~f1" > Nul 2>&1
