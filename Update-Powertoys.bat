@@ -1,0 +1,1 @@
+@Call "%~dp0assets\main-powertoys.bat" "%~f1"
