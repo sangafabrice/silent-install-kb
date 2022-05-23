@@ -13,14 +13,19 @@
 PushD "%~dp0"
 Call set-system-autorun.bat > Nul
 SetLocal ENABLEDELAYEDEXPANSION
-For /F "Tokens=1 Delims=\" %%L In ("%~1") Do If /I "Profile:" EQU "%%~L" GoTo FromProfile
+For /F "Tokens=1* Delims=\" %%L In ("%~1") Do (
+    If /I "Profile:" EQU "%%~L" (
+        Set "rel_exepath=%%~M"
+        GoTo FromProfile
+    )
+)
 Set app=%PROFILE_DRIVE_PATH%\%~1
 Set shim=%app%
 GoTo EndFromProfile
 :FromProfile
 Set program_data=
 Call profile.init.bat %~nx1
-Set app=%program_data%\%~nx1
+Set app=%program_data%\%rel_exepath%
 :EndFromProfile
 Set shim_command=
 If Not "%~nx1"=="%~1" (

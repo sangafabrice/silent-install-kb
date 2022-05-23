@@ -1,0 +1,1 @@
+@Call "%~dp0assets\main.bat" "profile:\WPS Office\ksolaunch.exe" "%~f1" Nsis: "* -gui" non_cli Link
