@@ -1,0 +1,1 @@
+."terminal.integrated.profiles.windows"."PowerShell Core"."path" = $PwshFullName
