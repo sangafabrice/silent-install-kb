@@ -1,0 +1,20 @@
+Windows Registry Editor Version 5.00
+
+[HKEY_CURRENT_USER\SOFTWARE\Classes\ZoomPbx.zoomphonecall\DefaultIcon]
+@="\"___PROG_DATA___\\bin\\Zoom.exe\",1"
+
+[HKEY_CURRENT_USER\SOFTWARE\Classes\ZoomPhoneCall\DefaultIcon]
+@="\"___PROG_DATA___\\bin\\Zoom.exe\",1"
+
+[HKEY_CURRENT_USER\SOFTWARE\Classes\ZoomPhoneCall\shell\open\command]
+@="\"___PROG_DATA___\\bin\\Zoom.exe\" --url=\"%%l\""
+
+[HKEY_CURRENT_USER\SOFTWARE\Clients\ZoomPBX\ZoomPBX\Capabilities]
+"ApplicationIcon"="\"___PROG_DATA___\\bin\\Zoom.exe\",1"
+
+[HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall\ZoomUMX]
+"DisplayIcon"="___PROG_DATA___\\bin\\Zoom.exe"
+"UninstallString"="\"___PROG_DATA___\\uninstall\\Installer.exe\" /uninstall"
+"QuietUninstallString"="\"___PROG_DATA___\\uninstall\\Installer.exe\" /uninstall /silent"
+"InstallLocation"="___PROG_DATA___\\bin"
+

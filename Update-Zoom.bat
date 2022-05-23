@@ -1,0 +1,1 @@
+@Call "%~dp0assets\main-zoom.bat" "%~f1"
