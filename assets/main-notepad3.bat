@@ -6,6 +6,7 @@
 PushD "%~dp0"
 Call set-system-autorun.bat > nul
 SetLocal ENABLEDELAYEDEXPANSION
+Set program_data=
 Call profile.init.bat notepad3
 Set app=%program_data%\notepad3.exe
 Set shim=%PROFILE_DRIVE_PATH%\notepad3.bat

@@ -6,6 +6,7 @@
 PushD "%~dp0"
 Call set-system-autorun.bat > Nul
 SetLocal ENABLEDELAYEDEXPANSION
+Set program_data=
 Call profile.init.bat sumatrapdf
 Set app=%program_data%\sumatrapdf.exe
 Set shim=%PROFILE_DRIVE_PATH%\sumatrapdf.bat
