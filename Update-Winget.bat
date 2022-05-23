@@ -1,0 +1,1 @@
+@Call "%~dp0assets\main-appx.bat" default:\Microsoft.DesktopAppInstaller default:\winget "%~f1"
