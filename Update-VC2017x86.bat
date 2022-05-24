@@ -1,0 +1,1 @@
+@Call "%~dp0assets\main-vc14.bat" x86 %1

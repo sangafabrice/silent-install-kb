@@ -1,0 +1,1 @@
+@Call "%~dp0assets\main.bat" profile:\dotnet.exe "%~f1" Msiexe: "--info _q_2 Skip=2_q_" "" Link

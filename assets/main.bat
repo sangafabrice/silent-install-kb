@@ -49,6 +49,7 @@ For /F "Tokens=1-2 Delims=\" %%T In ("%~3") Do (
     If /I "Chromium:" EQU "%%~T" GoTo InstallChromium
     If /I "Nsis:" EQU "%%~T" GoTo InstallNsis
     If /I "Inno:" EQU "%%~T" GoTo InstallInno
+    If /I "MsiExe:" EQU "%%~T" GoTo InstallMsiExe
     If /I "Msi:" EQU "%%~T" (
         Set "add_options=%%U"
         GoTo InstallMsi
@@ -73,6 +74,9 @@ GoTo EndInstall
 :InstallMsi
 If DEFINED add_options Set "add_options=!add_options:program_data=%program_data%!"
 If "%compare%"=="2" Call download-install-msi-setup.bat "%version%" "%link%" "%add_options%" "%~f2" > Nul
+GoTo EndInstall
+:InstallMsiExe
+If "%compare%"=="2" Call install-msiexe-setup.bat "%version%" "%link%" "%~f2" > Nul
 GoTo EndInstall
 :InstallChromium
 If "%compare%"=="2" (
