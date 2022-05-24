@@ -1,0 +1,48 @@
+Windows Registry Editor Version 5.00
+
+[HKEY_CLASSES_ROOT\.git]
+@="gittxt"
+"Content Type"="text/plain"
+"PerceivedType"="text"
+
+[HKEY_CLASSES_ROOT\.gitattributes]
+@="gittxt"
+
+[HKEY_CLASSES_ROOT\.gitconfig]
+@="gittxt"
+
+[HKEY_CLASSES_ROOT\.gitmodules]
+@="gittxt"
+
+[HKEY_CLASSES_ROOT\.gitignore]
+@="gittxt"
+
+[HKEY_CLASSES_ROOT\.gitkeep]
+@="gittxt"
+"Content Type"="text/plain"
+"PerceivedType"="text"
+
+[HKEY_CLASSES_ROOT\gittxt\DefaultIcon]
+@=""C:\\ProgramData\\Git\\git-bash.exe""
+
+[HKEY_CLASSES_ROOT\gittxt\Shell\Open\Command]
+@="C:\\Windows\\System32\\notepad.exe \"%1\""
+
+[HKEY_CLASSES_ROOT\Directory\Background\Shell\git_gui]
+"Extended"=""
+
+[HKEY_CLASSES_ROOT\Directory\Background\Shell\git_shell]
+"Extended"=""
+
+[HKEY_CLASSES_ROOT\Directory\Shell\git_gui]
+"Extended"=""
+
+[HKEY_CLASSES_ROOT\Directory\Shell\git_shell]
+"Extended"=""
+
+[HKEY_CLASSES_ROOT\LibraryFolder\background\shell\git_gui]
+"Extended"=""
+
+[HKEY_CLASSES_ROOT\LibraryFolder\background\shell\git_shell]
+"Extended"=""
+
