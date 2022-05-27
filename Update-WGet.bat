@@ -1,0 +1,1 @@
+@Call "%~dp0assets\main.bat" shimmed\wget.exe "%~f1" "" "--version 3" "" Link
