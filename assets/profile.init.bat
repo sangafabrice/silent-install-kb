@@ -6,6 +6,7 @@ If %~1==autoit Set program_data=%ProgramData%\AutoIt
 If %~1==avastbrowser.exe Set program_data=%ProgramData%\AvastSecure
 If %~1==barrier.exe Set program_data=%ProgramData%\Barrier
 If %~1==blisk.exe Set program_data=%ProgramData%\Blisk
+If %~1==brave.exe Set program_data=%ProgramData%\Brave
 If %~1==chocolatey Set program_data=%ProgramData%\Chocolatey
 If %~1==chrome.exe Set program_data=%ProgramData%\GoogleChrome
 If %~1==curl Set program_data=%windir%\System32
