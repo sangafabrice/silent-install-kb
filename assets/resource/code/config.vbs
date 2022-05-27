@@ -15,16 +15,17 @@ Next
 ExtendCommand "Applications\Code.exe", "open"
 With WshShell
     Const VSCodeSettingsKey = "HKCU\SOFTWARE\Classes\CustomUI\VSCodeSettings"
-    Err.Clear
-    ResetFlag = .RegRead(VSCodeSettingsKey)
-    If Err.Number <> 0 Then
-        SettingJSON = .ExpandEnvironmentStrings("%APPDATA%\Code\User\settings.json")
-        With CreateObject("Scripting.FileSystemObject")
-            CodeSettingJSON = .BuildPath(.GetParentFolderName(WScript.ScriptFullName), "settings.json")
-        End With
-        .Run "Cmd /C ""Copy /Y """ & CodeSettingJSON & """ """ & SettingJSON & """""", 0, True
-        .RegWrite VSCodeSettingsKey, ""
+    If Not WScript.Arguments.Named.Exists("SkipCheck") Then
+        Err.Clear
+        .RegRead(VSCodeSettingsKey)
+        If Err.Number = 0 Then WScript.Quit
     End If
+    SettingJSON = .ExpandEnvironmentStrings("%APPDATA%\Code\User\settings.json")
+    With CreateObject("Scripting.FileSystemObject")
+        CodeSettingJSON = .BuildPath(.GetParentFolderName(WScript.ScriptFullName), "settings.json")
+    End With
+    .Run "Cmd /C ""Copy /Y """ & CodeSettingJSON & """ """ & SettingJSON & """""", 0, True
+    .RegWrite VSCodeSettingsKey, ""
 End With
 
 

@@ -1,0 +1,1 @@
+.profiles.list[.profiles.list as $plist | [$plist[] | .name] | indices("PowerShell") | if isempty(.[]) then ($plist | length) else .[] end] = $Json_txt
